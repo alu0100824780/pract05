@@ -29,4 +29,11 @@ class Test_Fraction < Test::Unit::TestCase
       assert(@irracional > @unidad)
       assert(@irracional >= @unidad)
     end
+
+    def test_aritmetic
+      assert(@unidad * @irracional == @irracional)
+      assert(@unidad + @irracional == Fraction.new(11,4) )
+      assert(@irracional - @unidad == Fraction.new(9,2) )
+      assert(-@unidad == Fraction.new(-1,1) )
+    end
 end
