@@ -7,5 +7,14 @@ class Fraction
 	@num = num
 	@den = den
   end
+  
+  
+  def to_s
+    "#@num/#@den"
+  end
+  
+  def to_f
+    @num/@den
+  end
 
 end

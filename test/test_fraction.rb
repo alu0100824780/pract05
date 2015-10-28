@@ -5,6 +5,7 @@ require 'test/unit'
 class Test_Fraction < Test::Unit::TestCase
     def setup
       @unidad = Fraction.new(1,1)
+      @irracional = Fraction.new(10,3)
     end
     
     
@@ -15,5 +16,10 @@ class Test_Fraction < Test::Unit::TestCase
     
     def test_zero_error
       assert_raise(RuntimeError) { Fraction.new(1,0)}
+    end
+    
+    def test_type_cast
+      assert_equal(@irracional.to_s,"10/3")
+      assert_equal(@irracional.to_f,10/3)
     end
 end
