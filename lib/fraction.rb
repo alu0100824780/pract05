@@ -16,5 +16,42 @@ class Fraction
   def to_f
     @num/@den
   end
+  
+  def == (other)
+    @num == other.num and @den == other.den
+  end
+  
+  def -@
+    Fraction.new(-@num, @den)
+  end
+  
+  def +(other)
+    Fraction.new(@num + other.num, @den + other.den)
+  end
+  
+  def -(other)
+    Fraction.new(@num - other.num, @den - other.den)
+  end
+  
+  def *(other)
+    Fraction.new(@num * other.num, @den * other.den)
+  end
+  
+  def <(other)
+    (@num * other.den) < (@den * other.num)
+  end
+  
+  def <=(other)
+    (@num * other.den) <= (@den * other.num)
+  end
+    
+  def >(other)
+    (@num * other.den) > (@den * other.num)
+  end
+  
+  def >=(other)
+    (@num * other.den) >= (@den * other.num)
+  end
+    
 
 end

@@ -22,4 +22,11 @@ class Test_Fraction < Test::Unit::TestCase
       assert_equal(@irracional.to_s,"10/3")
       assert_equal(@irracional.to_f,10/3)
     end
+
+    def test_comparational_operators
+      assert(@unidad < @irracional)
+      assert(@unidad <= @irracional)
+      assert(@irracional > @unidad)
+      assert(@irracional >= @unidad)
+    end
 end
