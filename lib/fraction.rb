@@ -1,11 +1,19 @@
 class Fraction
   attr_reader :num, :den
+
+  def gcd(x,y)
+    y == 0 ? x: gcd(y, x%y)
+  end
+
+  def lcm(x,y)
+    z = x / gcd(x,y) * y
+  end
   
   def initialize(num,den)
       raise RuntimeError, "El denominador no puede ser cero"  if den.eql? (0)
-
-	@num = num
-	@den = den
+ 	d = gcd(num, den)
+	@num = num / d
+	@den = den / d
   end
   
   
