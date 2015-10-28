@@ -1,4 +1,4 @@
-require '../lib/fraction.rb'
+require 'lib/fraction.rb'
 require 'test/unit'
 
 
